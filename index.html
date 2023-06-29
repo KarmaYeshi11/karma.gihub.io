@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>HOME</title>
+    <style type="text/css">
+      body {
+        background-color: orange;
+      }
+      h1 {
+        color: white;
+
+        -webkit-text-stroke: 1.6px #db5f0d;
+        font-size: 50px;
+      }
+      #password,
+      #email,
+      #submit {
+        font-family: fontawesome;
+      }
+
+      #new a:hover {
+        color: white;
+      }
+
+      #new a {
+        color: black;
+        text-decoration: none;
+        margin-left: 45%;
+        font-family: monospace roboto;
+        font-size: 20px;
+        line-height: 10px;
+      }
+
+      .container {
+        position: relative;
+        display: inline-block;
+        margin-left: 39%;
+      }
+
+      .image {
+        width: 300px;
+      }
+
+      .map {
+        position: absolute;
+        top: 80;
+        right: -350px;
+        display: none;
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      .container:hover .map {
+        display: inline-block;
+      }
+      #submit {
+        color: white;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+  var database = [
+  {
+    username: "webdevelopment",
+    password: "web123"
+  },
+  {
+    username: "coding a",
+    password: "coddinga123"
+  },
+  {
+    username: "coding b",
+    password: "coddingb123"
+  },
+  {
+    username: "driving",
+    password: "driving123"
+  }
+];
+
+var newsFeed = [
+  {
+    username: "web development",
+    timeline: "i love yeshi"
+  },
+  {
+    username: "yeshi",
+    timeline: "dam i hit my head"
+  }
+];
+
+var usernamePrompt = prompt("What is your username?");
+var passwordPrompt = prompt("What is your password?");
+
+function isUserValid(username, password) {
+  for (var i = 0; i < database.length; i++) {
+    if (database[i].username === username && database[i].password === password) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function signIn(username, password) {
+  if (isUserValid(username, password)) {
+    console.log(newsFeed);
+  } else {
+    alert("Sorry, wrong username and password.");
+  }
+}
+
+signIn(usernamePrompt, passwordPrompt);
+</script>
+    <center><h1>"Welcome To DSP Yonphula"</h1></center>
+    <br />
+    <div class="container">
+      <img
+        src="C:\Users\user\Desktop\DSP-patch-300x300-removebg-preview.png"
+        width="280px"
+      />
+      <div class="map">
+        <div class="mapouter">
+          <div class="gmap_canvas">
+            <iframe
+              width="350"
+              height="100"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?q=yonphula&t=&z=10&ie=UTF8&iwloc=&output=embed"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+            ></iframe>
+            <a href="https://2yu.co">2yu</a><br />
+            <style>
+              .mapouter {
+                position: relative;
+                text-align: right;
+                height: 100px;
+                width: 350px;
+              }
+            </style>
+            <a href="https://embedgooglemap.2yu.co">html embed google map</a>
+            <style>
+              .gmap_canvas {
+                overflow: hidden;
+                background: none !important;
+                height: 100px;
+                width: 350px;
+              }
+            </style>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex">
+      <div class="text">
+        <br />
+        <center>
+          <form
+            method="POST"
+            action="courses.html"
+            name="contactform"
+            id="contactform"
+          >
+            <input
+              type="email"
+              class="form-control"
+              placeholder="  &#xf007;  username"
+              name="email"
+              id="email"
+            /><br />
+            <br />
+            <input
+              type="password"
+              class="form-control"
+              placeholder=" &#xf023; password"
+              name="password"
+              id="password"
+            /><br /><br />
+            <input
+              type="submit"
+              value="Log in"
+              class="button btn-primary"
+              placeholder="&#xe15a;"
+              id="submit"
+            />
+          </form>
+        </center>
+      </div>
+    </div>
+
+    <p id="new"><a href="">First time here?</a></p>
+    <p id="new"><a href="">Get in touch!</a></p>
+  </body>
+</html>
